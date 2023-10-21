@@ -442,18 +442,17 @@ export default function Board() {
           <button onClick={resetScore} className="resetScore">
             Reset Score
           </button>
+          <button onClick={playSound}>Click me</button>
+
+          <button onClick={pause}>Click me</button>
+          <AudioPlayer audio={audio} />
         </div>
       </div>
       <div
         className={winner ? "mainDivTwo" : isDraw ? "mainDivThree" : "mainDiv"}
         onClick={playAgain}
-      ></div>
-      <div>
-        <button onClick={playSound}>Click me</button>
-
-        <button onClick={pause}>Click me</button>
+      >
       </div>
-      <AudioPlayer audio={audio} />
     </>
   );
 }
