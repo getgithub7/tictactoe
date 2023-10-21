@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Ipixelu";
+  src: url("./fonts/I-pixel-u.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-image: url("arena.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 1200px;
+  font-family: "Ipixelu";
+  font-size: 1.6rem;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.mainDiv {
+  top: 0px;
+  right: 420px;
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background-color: transparent;
+  visibility: hidden;
+}
+
+.mainDivTwo {
+  top: 0px;
+  right: 200px;
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background-color: transparent;
+  visibility: visible;
+}
+.mainDivThree {
+  top: 0px;
+  right: 200px;
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background-color: transparent;
+  visibility: visible;
+}
+.colorEasy {
+  background-color: blue;
+}
+.colorImpossible {
+  background-color: red;
+}
+
+.hidden {
+  display: none;
+}
+.wrapper {
+  margin-top: 100px;
+  margin-left: 650px;
+}
+
+.easy {
+  margin: 3px;
+  color: black;
+  background-color: white;
+}
+
+.impossible {
+  margin: 3px;
+  color: black;
+  background-color: white;
+}
+.board-row {
   align-items: center;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.playAgainButton {
   color: white;
+  background-color: red;
+  visibility: hidden;
+}
+.resetScore {
+  background-color: white;
+  margin: 3px;
+}
+.result {
+  background-color: white;
+}
+.square {
+  width: 173px;
+  height: 173px;
+  font-size: 6.5rem;
+  margin: 1px;
+  border: 1px solid white;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  color: black;
+  border: 1px solid white;
+
+  font-family: "Ipixelu";
+}
+.square:nth-last-child(-n + 3) {
+  border-bottom: 1px solid white;
+}
+.square:nth-last-child(-n + 3):nth-child(-n + 5) {
+  border-bottom: 1px solid black;
+  border-left: none;
 }
 
-.App-link {
-  color: #61dafb;
+.square:hover {
+  background-color: rgb(199, 194, 194);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square:nth-child(3n + 3),
+.square:nth-child(3n + 6),
+.square:nth-child(3n + 9) {
+  border-right: none; /* Remove the bottom border of the second, fifth, and eighth elements */
+}
+
+.board-row:first-of-type .square:nth-of-type(-n + 3) {
+  border-top: none; /* Remove the bottom border of the first three elements in the first row */
 }
